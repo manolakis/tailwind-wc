@@ -1,0 +1,71 @@
+{
+  "name": "@manolakis/css4wc",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manolakis/css4wc.git"
+  },
+  "author": {
+    "name": "Manuel Martin",
+    "email": "manuel.martin@gmail.com",
+    "url": "https://github.com/manolakis"
+  },
+  "scripts": {
+    "debug": "wtr --watch --config web-test-runner.config.js",
+    "format": "run-p format:*",
+    "format:eslint": "eslint --ext .js,.html . --fix",
+    "format:prettier": "prettier \"**/*.{js,json,md}\" --write",
+    "lint": "run-p lint:*",
+    "lint:eclint": "git ls-files | xargs eclint check",
+    "lint:eslint": "eslint --ext .js,.html .",
+    "lint:markdownlint": "git ls-files '*.md' | xargs markdownlint --ignore '{.github/**/*.md,.changeset/*.md,**/CHANGELOG.md}'",
+    "lint:prettier": "prettier \"**/*.{js,json,md}\" --list-different || (echo '↑↑ these files are not prettier formatted ↑↑' && exit 1)",
+    "release": "changeset publish",
+    "start": "npm run storybook",
+    "storybook": "wds -c wds-storybook.config.js --watch",
+    "storybook:build": "build-storybook"
+  },
+  "files": [],
+  "devDependencies": {
+    "@changesets/cli": "^2.14.1",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@open-wc/eslint-config": "^4.2.0",
+    "@web/dev-server": "^0.1.8",
+    "@web/dev-server-storybook": "^0.3.5",
+    "@web/test-runner": "^0.12.15",
+    "@web/test-runner-junit-reporter": "^0.4.1",
+    "@web/test-runner-playwright": "^0.8.4",
+    "eclint": "^2.8.1",
+    "eslint-config-prettier": "^8.1.0",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4",
+    "lit-element": "^2.4.0",
+    "markdownlint-cli": "^0.27.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "prettier-plugin-package": "^1.3.0",
+    "remark-extend": "^0.3.0"
+  },
+  "lint-staged": {
+    "*": [
+      "eclint"
+    ],
+    "*.{js,cjs,html}": [
+      "eslint --fix"
+    ],
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "markdownlint --ignore '{.github/**/*.md,.changeset/*.md,**/CHANGELOG.md}'"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "trailingComma": "all"
+  }
+}

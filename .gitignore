@@ -1,0 +1,31 @@
+## editors
+.idea/
+.vscode/
+
+## system files
+.DS_Store
+
+## npm
+npm-debug.log
+
+## yarn (we prefer npm)
+yarn.lock
+yarn-debug.log
+yarn-error.log
+
+## builds
+dist/
+build/
+lib/
+
+## temporal folders
+.tmp/
+coverage/
+
+## storybook
+.cache/
+.history/
+storybook-static/
+
+## node
+node_modules/
