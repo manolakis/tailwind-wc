@@ -22,7 +22,7 @@
     "lint:markdownlint": "git ls-files '*.md' | xargs markdownlint --ignore '{.github/**/*.md,.changeset/*.md,**/CHANGELOG.md}'",
     "lint:prettier": "prettier \"**/*.{js,json,md}\" --list-different || (echo '↑↑ these files are not prettier formatted ↑↑' && exit 1)",
     "release": "changeset publish",
-    "start": "npm run storybook",
+    "start": "rocket start",
     "storybook": "wds -c wds-storybook.config.js --watch",
     "storybook:build": "build-storybook",
     "test": "wtr --coverage"
@@ -34,6 +34,8 @@
     "@commitlint/config-conventional": "^12.0.1",
     "@open-wc/eslint-config": "^4.2.0",
     "@open-wc/testing": "^2.5.32",
+    "@rocket/cli": "^0.6.0",
+    "@rocket/launch": "^0.4.0",
     "@web/dev-server": "^0.1.8",
     "@web/dev-server-storybook": "^0.3.5",
     "@web/test-runner": "^0.12.15",
