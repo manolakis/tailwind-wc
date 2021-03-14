@@ -12,7 +12,7 @@
     "url": "https://github.com/manolakis"
   },
   "scripts": {
-    "debug": "wtr --watch --config web-test-runner.config.js",
+    "debug": "wtr --watch --config web-test-runner.config.mjs",
     "format": "run-p format:*",
     "format:eslint": "eslint --ext .js,.html . --fix",
     "format:prettier": "prettier \"**/*.{js,json,md}\" --write",
@@ -24,7 +24,8 @@
     "release": "changeset publish",
     "start": "npm run storybook",
     "storybook": "wds -c wds-storybook.config.js --watch",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "test": "wtr --coverage"
   },
   "files": [],
   "devDependencies": {
@@ -32,9 +33,11 @@
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "@open-wc/eslint-config": "^4.2.0",
+    "@open-wc/testing": "^2.5.32",
     "@web/dev-server": "^0.1.8",
     "@web/dev-server-storybook": "^0.3.5",
     "@web/test-runner": "^0.12.15",
+    "@web/test-runner-commands": "^0.4.1",
     "@web/test-runner-junit-reporter": "^0.4.1",
     "@web/test-runner-playwright": "^0.8.4",
     "eclint": "^2.8.1",
