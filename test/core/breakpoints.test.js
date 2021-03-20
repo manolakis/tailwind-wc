@@ -1,5 +1,5 @@
-import { expect } from "@open-wc/testing";
-import { breakpoints } from "../../src/core/breakpoints.js";
+import { expect } from '@open-wc/testing';
+import { breakpoints } from '../../src/core/breakpoints.js';
 
 describe('breakpoints', () => {
   it('should be numeric', () => {
