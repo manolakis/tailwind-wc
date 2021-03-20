@@ -63,9 +63,11 @@ describe('generateVariants', () => {
       });
 
       expect(
-        combine(['sample'], [variant]).reduce((acc, name, index) => {
-          return acc && cssRules[index].className.startsWith(name.replaceAll(':', '\\:'));
-        }, true),
+        combine(['sample'], [variant]).reduce(
+          (acc, name, index) =>
+            acc && cssRules[index].className.startsWith(name.replaceAll(':', '\\:')),
+          true,
+        ),
       ).to.be.true;
     });
   });

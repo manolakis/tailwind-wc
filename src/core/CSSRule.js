@@ -1,5 +1,4 @@
-import { interpolate } from './utils.js';
-import { escape } from './utils.js';
+import { escape, interpolate } from './utils.js';
 
 /**
  * Represents a CSS Rule.

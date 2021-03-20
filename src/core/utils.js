@@ -35,7 +35,7 @@ export const interpolate = (strings, ...values) =>
 export const escape = name => {
   const [initial] = name;
 
-  if (isNaN(parseInt(initial, 10))) {
+  if (Number.isNaN(parseInt(initial, 10))) {
     return name;
   }
 
@@ -48,9 +48,8 @@ export const escape = name => {
  * @param {Array<string>} groups
  * @returns {Array<string>}
  */
-export const combine = (...groups) => {
-  return groups.reduce((result, group) => [
+export const combine = (...groups) =>
+  groups.reduce((result, group) => [
     ...result,
     ...group.flatMap(item => result.map(scope => `${item}:${scope}`)),
   ]);
-};
