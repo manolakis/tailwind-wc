@@ -19,7 +19,7 @@ const NON_RESPONSIVE_MEDIA_VARIANTS = MEDIA_VARIANTS.filter(key => !breakpoints[
  * @param {CSSRule|CSSMedia} cssRule
  * @returns {String}
  */
-const defaultMapper = cssRule => cssRule.toString();
+export const defaultMapper = cssRule => cssRule.toString();
 
 /**
  * Creates a responsive version for the specified rules.
