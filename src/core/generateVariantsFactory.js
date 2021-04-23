@@ -83,23 +83,17 @@ const createVariants = ({ rules, variant }) => {
  * Generates the CSS variants for the specified rules.
  *
  * @param {String} scope
- * @param {Array<{className string, body: string}>} baseRules
+ * @param {Object} baseRules
  * @returns {function(Variants=): *[]}
  */
-export const generateVariantsFactory = (scope, baseRules) => {
+export const generateVariantsFactory = (scope, baseRules = {}) => {
   if (typeof scope !== 'string' || scope.trim() === '') {
     throw new Error('scope is mandatory and must be a string');
   }
 
-  if (!Array.isArray(baseRules) || baseRules.length === 0) {
+  if (Object.keys(baseRules).length === 0) {
     throw new Error(`baseRules must be an array of CSSRules and can't be empty`);
   }
-
-  baseRules.forEach(({ className, body }) => {
-    if (!className || !body) {
-      throw new Error('base rules should be like { className: string, body: string }');
-    }
-  });
 
   if (!globalCache.has(scope)) {
     globalCache.set(scope, new Map());
@@ -125,7 +119,15 @@ export const generateVariantsFactory = (scope, baseRules) => {
       if (!rulesCache.has(scope)) {
         rulesCache.set(
           scope,
-          baseRules.map(({ className, body }) => new CSSRule(className, body)),
+          Object.entries(baseRules).map(
+            ([className, body]) =>
+              new CSSRule(
+                className,
+                `${Object.entries(body)
+                  .map(([key, value]) => `${key}: ${value}`)
+                  .join(';')};`,
+              ),
+          ),
         );
       }
 

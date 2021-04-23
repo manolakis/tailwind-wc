@@ -1,7 +1,7 @@
 import { generateVariantsFactory } from './core/generateVariantsFactory.js';
 
-export default generateVariantsFactory('float', [
-  { className: 'float-left', body: 'float: left;' },
-  { className: 'float-right', body: 'float: right;' },
-  { className: 'float-none', body: 'float: none;' },
-]);
+export default generateVariantsFactory('float', {
+  'float-left': { float: 'left' },
+  'float-right': { float: 'right' },
+  'float-none': { float: 'none' },
+});
