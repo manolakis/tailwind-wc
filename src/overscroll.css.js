@@ -1,13 +1,13 @@
 import { generateVariantsFactory } from './core/generateVariantsFactory.js';
 
-export default generateVariantsFactory('overscroll', [
-  { className: 'overscroll-auto', body: 'overscroll-behavior: auto;' },
-  { className: 'overscroll-contain', body: 'overscroll-behavior: contain;' },
-  { className: 'overscroll-none', body: 'overscroll-behavior: none;' },
-  { className: 'overscroll-y-auto', body: 'overscroll-behavior-y: auto;' },
-  { className: 'overscroll-y-contain', body: 'overscroll-behavior-y: contain;' },
-  { className: 'overscroll-y-none', body: 'overscroll-behavior-y: none;' },
-  { className: 'overscroll-x-auto', body: 'overscroll-behavior-x: auto;' },
-  { className: 'overscroll-x-contain', body: 'overscroll-behavior-x: contain;' },
-  { className: 'overscroll-x-none', body: 'overscroll-behavior-x: none;' },
-]);
+export default generateVariantsFactory('overscroll', {
+  'overscroll-auto': { 'overscroll-behavior': 'auto' },
+  'overscroll-contain': { 'overscroll-behavior': 'contain' },
+  'overscroll-none': { 'overscroll-behavior': 'none' },
+  'overscroll-y-auto': { 'overscroll-behavior-y': 'auto' },
+  'overscroll-y-contain': { 'overscroll-behavior-y': 'contain' },
+  'overscroll-y-none': { 'overscroll-behavior-y': 'none' },
+  'overscroll-x-auto': { 'overscroll-behavior-x': 'auto' },
+  'overscroll-x-contain': { 'overscroll-behavior-x': 'contain' },
+  'overscroll-x-none': { 'overscroll-behavior-x': 'none' },
+});

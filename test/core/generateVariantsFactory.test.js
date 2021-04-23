@@ -6,8 +6,8 @@ import { generateVariantsFactory as _generateVariantsFactory } from '../../src/c
 import { camelize, combine } from '../../src/core/utils.js';
 
 const mapper = cssRule => cssRule;
-const baseRule = { className: 'sample', body: 'color: red' };
-const generateVariantsFactory = ({ scope = 'test', baseRules = [baseRule] } = {}) =>
+const baseRule = { sample: { color: '"red"' } };
+const generateVariantsFactory = ({ scope = 'test', baseRules = baseRule } = {}) =>
   _generateVariantsFactory(scope, baseRules);
 
 describe('generateVariants', () => {
@@ -23,23 +23,15 @@ describe('generateVariants', () => {
     expect(() => generateVariantsFactory({ scope: '' })).to.throw();
   });
 
-  it('should throw if the baseRules are not an array', () => {
-    expect(() => generateVariantsFactory({ baseRules: 'string' })).to.throw();
-  });
-
   it('should throw if the baseRules is an empty array', () => {
     expect(() => generateVariantsFactory({ baseRules: [] })).to.throw();
-  });
-
-  it('should throw if the baseRules contains an element different than a { className: string, body: string }', () => {
-    expect(() => generateVariantsFactory({ baseRules: [baseRule, 'string'] })).to.throw();
   });
 
   it('should generate the base rules if no variants are specified', () => {
     const generateVariants = generateVariantsFactory();
     const [cssRule] = generateVariants({ mapper });
 
-    expect(cssRule).to.be.eql(new CSSRule(baseRule.className, baseRule.body));
+    expect(cssRule).to.be.eql(new CSSRule('sample', `color: "red";`));
   });
 
   it('should generate the same object instances calling it twice', () => {

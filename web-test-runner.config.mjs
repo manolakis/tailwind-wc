@@ -13,7 +13,6 @@ export default {
       functions: 90,
       lines: 90,
     },
-    exclude: ['test/*'],
   },
   testFramework: {
     config: {
