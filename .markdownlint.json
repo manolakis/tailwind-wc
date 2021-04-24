@@ -4,5 +4,8 @@
   },
   "no-trailing-punctuation": {
     "punctuation": ".,;。，；：！"
+  },
+  "no-inline-html": {
+    "allowed_elements": ["simple-greeting"]
   }
 }
