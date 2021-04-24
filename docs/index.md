@@ -1,3 +1,8 @@
 # Welcome to Your Rocket Site
 
-Text here, like any Markdown file.
+```js script
+import '../demo/hello.js';
+```
+
+<simple-greeting name="World"></simple-greeting>
+<simple-greeting name="CSS4WC"></simple-greeting>
