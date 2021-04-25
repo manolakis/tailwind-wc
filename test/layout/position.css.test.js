@@ -1,9 +1,9 @@
 import { expect } from '@open-wc/testing';
-import float from '../src/float.css.js';
+import position from '../../src/layout/position.css.js';
 
-describe('float', () => {
+describe('position', () => {
   it('should generate the following css rules', async () => {
-    const rules = float({
+    const rules = position({
       first: true,
       last: true,
       odd: true,
@@ -21,7 +21,7 @@ describe('float', () => {
       responsive: true,
     });
 
-    const dataUrl = new URL('./float.css.json', import.meta.url);
+    const dataUrl = new URL('./position.css.json', import.meta.url);
     const response = await fetch(dataUrl);
     const json = await response.json();
 

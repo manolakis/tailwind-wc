@@ -1,9 +1,9 @@
 import { expect } from '@open-wc/testing';
-import clear from '../src/clear.css.js';
+import boxSizing from '../../src/layout/box-sizing.css.js';
 
-describe('clear', () => {
+describe('box-sizing', () => {
   it('should generate the following css rules', async () => {
-    const rules = clear({
+    const rules = boxSizing({
       first: true,
       last: true,
       odd: true,
@@ -21,7 +21,7 @@ describe('clear', () => {
       responsive: true,
     });
 
-    const dataUrl = new URL('./clear.css.json', import.meta.url);
+    const dataUrl = new URL('./box-sizing.css.json', import.meta.url);
     const response = await fetch(dataUrl);
     const json = await response.json();
 

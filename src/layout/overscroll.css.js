@@ -1,4 +1,4 @@
-import { generateVariantsFactory } from './core/generateVariantsFactory.js';
+import { generateVariantsFactory } from '../core/generateVariantsFactory.js';
 
 export default generateVariantsFactory('overscroll', {
   'overscroll-auto': { 'overscroll-behavior': 'auto' },

@@ -1,9 +1,9 @@
 import { expect } from '@open-wc/testing';
-import container from '../src/container.css.js';
+import overscroll from '../../src/layout/overscroll.css.js';
 
-describe('container', () => {
+describe('overscroll', () => {
   it('should generate the following css rules', async () => {
-    const rules = container({
+    const rules = overscroll({
       first: true,
       last: true,
       odd: true,
@@ -21,7 +21,7 @@ describe('container', () => {
       responsive: true,
     });
 
-    const dataUrl = new URL('./container.css.json', import.meta.url);
+    const dataUrl = new URL('./overscroll.css.json', import.meta.url);
     const response = await fetch(dataUrl);
     const json = await response.json();
 

@@ -1,9 +1,9 @@
 import { expect } from '@open-wc/testing';
-import position from '../src/position.css.js';
+import visibility from '../../src/layout/visibility.css.js';
 
-describe('position', () => {
+describe('visibility', () => {
   it('should generate the following css rules', async () => {
-    const rules = position({
+    const rules = visibility({
       first: true,
       last: true,
       odd: true,
@@ -21,7 +21,7 @@ describe('position', () => {
       responsive: true,
     });
 
-    const dataUrl = new URL('./position.css.json', import.meta.url);
+    const dataUrl = new URL('./visibility.css.json', import.meta.url);
     const response = await fetch(dataUrl);
     const json = await response.json();
 
