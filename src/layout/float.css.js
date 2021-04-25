@@ -1,4 +1,4 @@
-import { generateVariantsFactory } from './core/generateVariantsFactory.js';
+import { generateVariantsFactory } from '../core/generateVariantsFactory.js';
 
 export default generateVariantsFactory('float', {
   'float-left': { float: 'left' },

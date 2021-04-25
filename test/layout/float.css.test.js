@@ -1,9 +1,9 @@
 import { expect } from '@open-wc/testing';
-import visibility from '../src/visibility.css.js';
+import float from '../../src/layout/float.css.js';
 
-describe('visibility', () => {
+describe('float', () => {
   it('should generate the following css rules', async () => {
-    const rules = visibility({
+    const rules = float({
       first: true,
       last: true,
       odd: true,
@@ -21,7 +21,7 @@ describe('visibility', () => {
       responsive: true,
     });
 
-    const dataUrl = new URL('./visibility.css.json', import.meta.url);
+    const dataUrl = new URL('./float.css.json', import.meta.url);
     const response = await fetch(dataUrl);
     const json = await response.json();
 
