@@ -5,7 +5,7 @@ import { mediaVariants } from './mediaVariants.js';
 import { pseudoClassVariants } from './pseudoClassVariants.js';
 import { camelize, combine } from './utils.js';
 
-const globalCache = new Map();
+const mapperCache = new Map();
 const globalRulesCache = new Map();
 
 const PSEUDO_CLASS_VARIANTS = Object.keys(pseudoClassVariants);
@@ -95,16 +95,9 @@ export const generateVariantsFactory = (scope, baseRules = {}) => {
     throw new Error(`baseRules must be an array of CSSRules and can't be empty`);
   }
 
-  if (!globalCache.has(scope)) {
-    globalCache.set(scope, new Map());
-  }
-
-  const cache = globalCache.get(scope);
-
   if (!globalRulesCache.has(scope)) {
     globalRulesCache.set(scope, new Map());
   }
-
   const rulesCache = globalRulesCache.get(scope);
 
   /**
@@ -114,6 +107,16 @@ export const generateVariantsFactory = (scope, baseRules = {}) => {
    */
   return (options = {}) => {
     const { mapper = defaultMapper, ...variants } = options;
+
+    if (!mapperCache.has(mapper)) {
+      mapperCache.set(mapper, new Map());
+    }
+    const globalCache = mapperCache.get(mapper);
+
+    if (!globalCache.has(scope)) {
+      globalCache.set(scope, new Map());
+    }
+    const cache = globalCache.get(scope);
 
     if (!cache.has(scope)) {
       if (!rulesCache.has(scope)) {
