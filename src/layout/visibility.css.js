@@ -1,6 +1,4 @@
-import { generateVariantsFactory } from '../core/generateVariantsFactory.js';
-
-export default generateVariantsFactory('visibility', {
+export default {
   visible: { visibility: 'visible' },
   invisible: { visibility: 'hidden' },
-});
+};

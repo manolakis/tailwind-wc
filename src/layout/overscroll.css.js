@@ -1,6 +1,4 @@
-import { generateVariantsFactory } from '../core/generateVariantsFactory.js';
-
-export default generateVariantsFactory('overscroll', {
+export default {
   'overscroll-auto': { 'overscroll-behavior': 'auto' },
   'overscroll-contain': { 'overscroll-behavior': 'contain' },
   'overscroll-none': { 'overscroll-behavior': 'none' },
@@ -10,4 +8,4 @@ export default generateVariantsFactory('overscroll', {
   'overscroll-x-auto': { 'overscroll-behavior-x': 'auto' },
   'overscroll-x-contain': { 'overscroll-behavior-x': 'contain' },
   'overscroll-x-none': { 'overscroll-behavior-x': 'none' },
-});
+};

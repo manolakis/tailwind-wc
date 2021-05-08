@@ -1,0 +1,20 @@
+<html>
+<head>
+  <script type="importmap">
+      {
+        "imports": {
+          "../../src/layoutResolver.js": "./mocks/layoutResolver.js"
+        }
+      }
+    </script>
+</head>
+<body>
+<script type="module">
+  import { runTests } from '@web/test-runner-mocha';
+
+  runTests(async () => {
+    await import('./RulesManager_test.js');
+  });
+</script>
+</body>
+</html>

@@ -1,25 +1,25 @@
 import { expect } from '@open-wc/testing';
-import clear from '../../src/layout/clear.css.js';
+import { css4wc } from '../../src/css4wc.js';
 
 describe('clear', () => {
   it('should generate the following css rules', async () => {
-    const rules = clear({
-      first: true,
-      last: true,
-      odd: true,
-      even: true,
-      visited: true,
-      checked: true,
-      focusWithin: true,
-      hover: true,
-      focus: true,
-      focusVisible: true,
-      active: true,
-      disabled: true,
-      motionReduce: true,
-      motionSafe: true,
-      responsive: true,
-    });
+    const rules = css4wc()('clear', [
+      'first',
+      'last',
+      'odd',
+      'even',
+      'visited',
+      'checked',
+      'focus-within',
+      'hover',
+      'focus',
+      'focus-visible',
+      'active',
+      'disabled',
+      'motion-reduce',
+      'motion-safe',
+      'responsive',
+    ]);
 
     const dataUrl = new URL('./clear.css.json', import.meta.url);
     const response = await fetch(dataUrl);

@@ -1,10 +1,9 @@
 import { CSSRule } from './CSSRule.js';
 import { CSSMedia } from './CSSMedia.js';
-import { breakpoints } from './breakpoints.js';
-import { mediaVariants } from './mediaVariants.js';
-import { pseudoClassVariants } from './pseudoClassVariants.js';
-import { camelize, combine } from './utils.js';
+import { config } from '../config.js';
+import { combine } from './utils.js';
 
+const { breakpoints, pseudoClassVariants, mediaVariants } = config;
 const mapperCache = new Map();
 const globalRulesCache = new Map();
 
@@ -30,7 +29,7 @@ export const defaultMapper = cssRule => cssRule.toString();
  */
 const createMediaRule = (variant, cssRules) => {
   const [firstRule] = cssRules;
-  const mediaPredicate = mediaVariants[variant](variant);
+  const mediaPredicate = mediaVariants[variant];
 
   if (firstRule instanceof CSSMedia) {
     return [
@@ -142,8 +141,8 @@ export const generateVariantsFactory = (scope, baseRules = {}) => {
 
     const keys = combine(
       [scope],
-      PSEUDO_CLASS_VARIANTS.filter(key => variants[camelize(key)]),
-      NON_RESPONSIVE_MEDIA_VARIANTS.filter(key => variants[camelize(key)]),
+      PSEUDO_CLASS_VARIANTS.filter(key => variants[key]),
+      NON_RESPONSIVE_MEDIA_VARIANTS.filter(key => variants[key]),
       variants.responsive ? RESPONSIVE_MEDIA_VARIANTS : [],
     );
 

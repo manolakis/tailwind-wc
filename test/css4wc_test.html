@@ -1,0 +1,20 @@
+<html>
+<head>
+  <script type="importmap">
+      {
+        "imports": {
+          "../../src/rules.js": "./mocks/rules.js"
+        }
+      }
+    </script>
+</head>
+<body>
+<script type="module">
+  import { runTests } from '@web/test-runner-mocha';
+
+  runTests(async () => {
+    await import('./css4wc_test.js');
+  });
+</script>
+</body>
+</html>
