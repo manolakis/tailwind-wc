@@ -1,25 +1,25 @@
 import { expect } from '@open-wc/testing';
-import position from '../../src/layout/position.css.js';
+import { css4wc } from '../../src/css4wc.js';
 
 describe('position', () => {
   it('should generate the following css rules', async () => {
-    const rules = position({
-      first: true,
-      last: true,
-      odd: true,
-      even: true,
-      visited: true,
-      checked: true,
-      focusWithin: true,
-      hover: true,
-      focus: true,
-      focusVisible: true,
-      active: true,
-      disabled: true,
-      motionReduce: true,
-      motionSafe: true,
-      responsive: true,
-    });
+    const rules = css4wc()('position', [
+      'first',
+      'last',
+      'odd',
+      'even',
+      'visited',
+      'checked',
+      'focus-within',
+      'hover',
+      'focus',
+      'focus-visible',
+      'active',
+      'disabled',
+      'motion-reduce',
+      'motion-safe',
+      'responsive',
+    ]);
 
     const dataUrl = new URL('./position.css.json', import.meta.url);
     const response = await fetch(dataUrl);

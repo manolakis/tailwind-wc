@@ -1,10 +1,10 @@
 import { expect } from '@open-wc/testing';
 import { CSSRule } from '../../src/core/CSSRule.js';
-import { breakpoints } from '../../src/core/breakpoints.js';
-import { pseudoClassVariants } from '../../src/core/pseudoClassVariants.js';
+import { config } from '../../src/config.js';
 import { generateVariantsFactory as _generateVariantsFactory } from '../../src/core/generateVariantsFactory.js';
-import { camelize, combine } from '../../src/core/utils.js';
+import { combine } from '../../src/core/utils.js';
 
+const { breakpoints, pseudoClassVariants } = config;
 const mapper = cssRule => cssRule;
 const baseRule = { sample: { color: '"red"' } };
 const generateVariantsFactory = ({ scope = 'test', baseRules = baseRule } = {}) =>
@@ -48,10 +48,9 @@ describe('generateVariants', () => {
     const generateVariants = generateVariantsFactory({ scope });
 
     Object.keys(pseudoClassVariants).forEach(variant => {
-      const variantName = camelize(variant);
       const cssRules = generateVariants({
         mapper,
-        [variantName]: true,
+        [variant]: true,
       });
 
       expect(
@@ -68,10 +67,9 @@ describe('generateVariants', () => {
     const scope = 'test';
     const generateVariants = generateVariantsFactory({ scope });
     const variant = 'motion-safe';
-    const variantName = camelize(variant);
     const cssRules = generateVariants({
       mapper,
-      [variantName]: true,
+      [variant]: true,
     });
 
     expect(
@@ -94,10 +92,9 @@ describe('generateVariants', () => {
     const scope = 'test';
     const generateVariants = generateVariantsFactory({ scope });
     const variant = 'motion-reduce';
-    const variantName = camelize(variant);
     const cssRules = generateVariants({
       mapper,
-      [variantName]: true,
+      [variant]: true,
     });
 
     expect(
@@ -153,7 +150,7 @@ describe('generateVariants', () => {
     const generateVariants = generateVariantsFactory({ scope });
     const cssRules = generateVariants({
       mapper,
-      motionReduce: true,
+      'motion-reduce': true,
       responsive: true,
     });
 
