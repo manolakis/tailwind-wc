@@ -1,6 +1,7 @@
 import { playwrightLauncher } from '@web/test-runner-playwright';
 import { defaultReporter } from '@web/test-runner';
 import { junitReporter } from '@web/test-runner-junit-reporter';
+import { importMapsPlugin } from '@web/dev-server-import-maps';
 
 export default {
   nodeResolve: true,
@@ -19,6 +20,9 @@ export default {
       timeout: '3000',
     },
   },
+  plugins: [
+    importMapsPlugin(),
+  ],
   browsers: [
     playwrightLauncher({ product: 'firefox' }),
     playwrightLauncher({ product: 'chromium' }),
