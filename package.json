@@ -12,6 +12,7 @@
     "url": "https://github.com/manolakis"
   },
   "scripts": {
+    "build": "rollup -c rollup.config.js",
     "debug": "wtr --watch --config web-test-runner.config.mjs",
     "format": "run-p format:*",
     "format:eslint": "eslint --ext .js,.html . --fix",
@@ -39,6 +40,7 @@
     "@open-wc/testing": "^2.5.33",
     "@rocket/cli": "^0.6.2",
     "@rocket/launch": "^0.4.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@web/dev-server": "^0.1.15",
     "@web/dev-server-import-maps": "0.0.5",
     "@web/dev-server-storybook": "^0.3.5",
@@ -57,6 +59,8 @@
     "prettier": "^2.2.1",
     "prettier-plugin-package": "^1.3.0",
     "remark-extend": "^0.3.0",
+    "rollup": "^2.50.5",
+    "rollup-plugin-terser": "^7.0.2",
     "sinon": "^11.1.1"
   },
   "lint-staged": {
