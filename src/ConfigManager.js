@@ -22,12 +22,12 @@ const DEFAULT_PSEUDO_CLASS_VARIANTS = {
 };
 
 const getDefaultMediaVariants = breakpoints => ({
-  'motion-reduce': 'prefers-reduced-motion: reduce',
-  'motion-safe': 'prefers-reduced-motion: no-preference',
+  'motion-reduce': '(prefers-reduced-motion: reduce)',
+  'motion-safe': '(prefers-reduced-motion: no-preference)',
   ...Object.fromEntries(
     Object.keys(breakpoints).map(breakpoint => [
       breakpoint,
-      `min-width: ${breakpoints[breakpoint]}px`,
+      `(min-width: ${breakpoints[breakpoint]}px)`,
     ]),
   ),
 });

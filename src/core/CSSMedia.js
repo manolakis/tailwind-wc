@@ -41,7 +41,7 @@ export class CSSMedia {
   }
 
   toString() {
-    return interpolate`@media(${this.predicate}) {\n\t${this.cssRules.map(cssRule =>
+    return interpolate`@media ${this.predicate} {\n\t${this.cssRules.map(cssRule =>
       cssRule.toString(),
     )}\n}`;
   }

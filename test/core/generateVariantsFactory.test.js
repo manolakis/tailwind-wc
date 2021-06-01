@@ -78,7 +78,7 @@ describe('generateVariants', () => {
 
         return acc && rule instanceof CSSRule
           ? rule.className.startsWith(name.replaceAll(':', '\\:'))
-          : rule.predicate === 'prefers-reduced-motion: no-preference' &&
+          : rule.predicate === '(prefers-reduced-motion: no-preference)' &&
               rule.cssRules.reduce(
                 (rulesAcc, cssRule) =>
                   rulesAcc && cssRule.className.startsWith(name.replaceAll(':', '\\:')),
@@ -103,7 +103,7 @@ describe('generateVariants', () => {
 
         return acc && rule instanceof CSSRule
           ? rule.className.startsWith(name.replaceAll(':', '\\:'))
-          : rule.predicate === 'prefers-reduced-motion: reduce' &&
+          : rule.predicate === '(prefers-reduced-motion: reduce)' &&
               rule.cssRules.reduce(
                 (rulesAcc, cssRule) =>
                   rulesAcc && cssRule.className.startsWith(name.replaceAll(':', '\\:')),
@@ -134,7 +134,7 @@ describe('generateVariants', () => {
 
         return (
           acc &&
-          rule.predicate === `min-width: ${breakpoints[breakpoint]}px` &&
+          rule.predicate === `(min-width: ${breakpoints[breakpoint]}px)` &&
           rule.cssRules.reduce(
             (rulesAcc, cssRule) =>
               rulesAcc && cssRule.className.startsWith(name.replaceAll(':', '\\:')),
@@ -168,7 +168,7 @@ describe('generateVariants', () => {
           if (firstVariant === 'motion-reduce') {
             return (
               acc &&
-              rule.predicate === 'prefers-reduced-motion: reduce' &&
+              rule.predicate === '(prefers-reduced-motion: reduce)' &&
               rule.cssRules.reduce(
                 (rulesAcc, cssRule) =>
                   rulesAcc && cssRule.className.startsWith(name.replaceAll(':', '\\:')),
@@ -192,7 +192,7 @@ describe('generateVariants', () => {
 
           return (
             acc &&
-            rule.predicate === `min-width: ${breakpoints[firstVariant]}px` &&
+            rule.predicate === `(min-width: ${breakpoints[firstVariant]}px)` &&
             rule.cssRules.reduce(
               (rulesAcc, cssRule) =>
                 rulesAcc && cssRule.className.startsWith(name.replaceAll(':', '\\:')),

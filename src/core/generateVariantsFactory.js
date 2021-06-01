@@ -34,7 +34,7 @@ const createMediaRule = (variant, cssRules) => {
   if (firstRule instanceof CSSMedia) {
     return [
       new CSSMedia(
-        `(${mediaPredicate}) and (${firstRule.predicate})`,
+        `${mediaPredicate} and ${firstRule.predicate}`,
         firstRule.cssRules.map(
           cssRule => new CSSRule(`${variant}\\:${cssRule.className}`, cssRule.body),
         ),
