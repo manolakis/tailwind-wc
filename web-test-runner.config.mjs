@@ -28,7 +28,10 @@ export default {
     playwrightLauncher({ product: 'chromium' }),
     playwrightLauncher({ product: 'webkit' }),
   ],
-  files: ['test/**/*.test.js', 'test/**/*_test.html'],
+  files: [
+    'packages/*/test/**/*.test.js',
+    'packages/*/test/**/*_test.html',
+  ],
   reporters: [
     defaultReporter({ reportTestResults: true, reportTestProgress: true }),
     junitReporter(),

@@ -14,8 +14,10 @@ _site-dev/
 ## npm
 npm-debug.log
 
-## yarn (we prefer npm)
-yarn.lock
+# (we prefer yarn)
+package-lock.json
+
+## yarn
 yarn-debug.log
 yarn-error.log
 

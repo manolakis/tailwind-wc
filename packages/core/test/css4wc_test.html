@@ -3,7 +3,7 @@
   <script type="importmap">
       {
         "imports": {
-          "../../src/layoutResolver.js": "./mocks/layoutResolver.js"
+          "../src/rules.js": "./mocks/rules.js"
         }
       }
     </script>
@@ -13,7 +13,7 @@
   import { runTests } from '@web/test-runner-mocha';
 
   runTests(async () => {
-    await import('./RulesManager_test.js');
+    await import('./css4wc_test.js');
   });
 </script>
 </body>

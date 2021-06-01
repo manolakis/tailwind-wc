@@ -1,6 +1,6 @@
 import { html, css, LitElement } from 'lit-element';
 
-import { css4wc } from '../src/css4wc.js';
+import { css4wc } from '../packages/core/src/css4wc.js';
 
 const mapper = rule => css([rule.toString()]);
 
