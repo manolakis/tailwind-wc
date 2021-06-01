@@ -1,9 +1,3 @@
-# CSS4WC
+# Tailwind WC
 
-```js script
-export default {
-  title: 'Intro/CSS4WC',
-};
-```
-
-CSS for web components.
+Tailwind for web components.
