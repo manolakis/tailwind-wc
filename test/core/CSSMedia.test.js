@@ -3,7 +3,7 @@ import { CSSMedia } from '../../src/core/CSSMedia.js';
 import { CSSRule } from '../../src/core/CSSRule.js';
 
 const createCSSMedia = ({
-  predicate = 'min-width: 600px',
+  predicate = '(min-width: 600px)',
   cssRules = [new CSSRule('sample', 'color: red')],
 } = {}) => new CSSMedia(predicate, cssRules);
 
@@ -45,6 +45,6 @@ describe('CSSMedia', () => {
       cssRules: [cssRule],
     } = cssMedia;
 
-    expect(cssMedia.toString()).to.be.equal(`@media(${predicate}) {\n\t${cssRule.toString()}\n}`);
+    expect(cssMedia.toString()).to.be.equal(`@media ${predicate} {\n\t${cssRule.toString()}\n}`);
   });
 });

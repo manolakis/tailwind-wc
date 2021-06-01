@@ -1,8 +1,8 @@
 [
   ".container { width: 100%; }",
-  "@media(min-width: 640px) {\n\t.sm\\:container { max-width: 640px; }\n}",
-  "@media(min-width: 768px) {\n\t.md\\:container { max-width: 768px; }\n}",
-  "@media(min-width: 1024px) {\n\t.lg\\:container { max-width: 1024px; }\n}",
-  "@media(min-width: 1280px) {\n\t.xl\\:container { max-width: 1280px; }\n}",
-  "@media(min-width: 1536px) {\n\t.\\32 xl\\:container { max-width: 1536px; }\n}"
+  "@media (min-width: 640px) {\n\t.sm\\:container { max-width: 640px; }\n}",
+  "@media (min-width: 768px) {\n\t.md\\:container { max-width: 768px; }\n}",
+  "@media (min-width: 1024px) {\n\t.lg\\:container { max-width: 1024px; }\n}",
+  "@media (min-width: 1280px) {\n\t.xl\\:container { max-width: 1280px; }\n}",
+  "@media (min-width: 1536px) {\n\t.\\32 xl\\:container { max-width: 1536px; }\n}"
 ]
