@@ -1,0 +1,44 @@
+{
+  "name": "@tailwind-wc/lit",
+  "version": "0.0.0",
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manolakis/tailwind-wc.git"
+  },
+  "author": {
+    "name": "Manuel Martin",
+    "email": "manuel.martin@gmail.com",
+    "url": "https://github.com/manolakis"
+  },
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "*.d.ts",
+    "*.js",
+    "src",
+    "types"
+  ],
+  "keywords": [
+    "web components",
+    "tailwind-wc",
+    "tailwindcss",
+    "tailwind",
+    "css",
+    "lit",
+    "lit-element"
+  ],
+  "dependencies": {
+    "@tailwind-wc/core": "^0.1.0",
+    "lit": "^2.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^2.5.33",
+    "@web/test-runner-mocha": "^0.7.2",
+    "sinon": "^11.1.1"
+  }
+}
