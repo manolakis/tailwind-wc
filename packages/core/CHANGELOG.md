@@ -1,0 +1,1 @@
+# @tailwind-wc/core
