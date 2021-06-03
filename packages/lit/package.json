@@ -1,6 +1,6 @@
 {
-  "name": "@tailwind-wc/core",
-  "version": "0.1.0",
+  "name": "@tailwind-wc/lit",
+  "version": "0.0.0",
   "private": false,
   "license": "MIT",
   "repository": {
@@ -12,10 +12,10 @@
     "email": "manuel.martin@gmail.com",
     "url": "https://github.com/manolakis"
   },
-  "main": "./index.js",
-  "module": "./index.js",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
   "exports": {
-    ".": "./index.js"
+    ".": "./src/index.js"
   },
   "files": [
     "*.d.ts",
@@ -28,10 +28,13 @@
     "tailwind-wc",
     "tailwindcss",
     "tailwind",
-    "css"
+    "css",
+    "lit",
+    "lit-element"
   ],
   "dependencies": {
-    "singleton-manager": "^1.4.2"
+    "@tailwind-wc/core": "^0.1.0",
+    "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {
     "@open-wc/testing": "^2.5.33",

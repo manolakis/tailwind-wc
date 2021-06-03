@@ -1,13 +1,11 @@
-import { html, css, LitElement } from 'lit-element';
+import { html, css, LitElement } from 'lit';
 
-import { css4wc } from '../packages/core/src/css4wc.js';
-
-const mapper = rule => css([rule.toString()]);
+import { tw } from '../index.js';
 
 export class SimpleGreeting extends LitElement {
   static get styles() {
     return [
-      css4wc(mapper)('float', 'clear'),
+      tw('float', 'clear'),
       css`
         p {
           color: blue;
