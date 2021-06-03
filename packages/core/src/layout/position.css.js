@@ -1,7 +1,9 @@
 export default {
-  static: { position: 'static' },
-  fixed: { position: 'fixed' },
-  absolute: { position: 'absolute' },
-  relative: { position: 'relative' },
-  sticky: { position: 'sticky' },
+  ...['static', 'fixed', 'absolute', 'relative', 'sticky'].reduce(
+    (acc, key) => ({
+      ...acc,
+      [key]: { position: key },
+    }),
+    {},
+  ),
 };

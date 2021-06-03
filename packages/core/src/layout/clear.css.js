@@ -1,6 +1,9 @@
 export default {
-  'clear-left': { clear: 'left' },
-  'clear-right': { clear: 'right' },
-  'clear-both': { clear: 'both' },
-  'clear-none': { clear: 'none' },
+  ...['left', 'right', 'both', 'none'].reduce(
+    (acc, key) => ({
+      ...acc,
+      [`clear-${key}`]: { clear: key },
+    }),
+    {},
+  ),
 };

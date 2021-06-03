@@ -1,4 +1,4 @@
-import layoutResolver from './layoutResolver.js';
+import layoutResolver from './layout/resolver.js';
 
 export class RulesManager {
   constructor() {
