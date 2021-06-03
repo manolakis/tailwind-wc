@@ -1,10 +1,12 @@
 import layoutResolver from './layout/resolver.js';
+import spacingResolver from './spacing/resolver.js';
 
 export class RulesManager {
   constructor() {
     this.__ruleResolvers = new Map();
 
     this.add(layoutResolver);
+    this.add(spacingResolver);
   }
 
   add(resolver) {
