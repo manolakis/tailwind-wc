@@ -1,17 +1,15 @@
 import { rules } from './rules.js';
 
-const defaultMapper = cssRule => cssRule.toString();
-
 /**
- * css4wc(mapper)('float', 'position', ['hover', 'responsive']);
+ * tailwind(mapper)('float', 'position', ['hover', 'responsive']);
  */
-export const css4wc =
-  (mapper = defaultMapper) =>
+export const tailwind =
+  mapper =>
   (...args) => {
     const options = args[args.length - 1];
 
     if (!Array.isArray(options)) {
-      return css4wc(mapper)(...args, []);
+      return tailwind(mapper)(...args, []);
     }
 
     const variants = {

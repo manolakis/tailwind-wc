@@ -1,11 +1,13 @@
 import { expect } from '@open-wc/testing';
-import { css4wc } from '../src/css4wc.js';
+import { tailwind } from '../src/tailwind.js';
 import { stub, KEY } from './mocks/rules.js';
 
-describe('css4wc', () => {
+const defaultMapper = cssRule => cssRule.toString();
+
+describe('tw', () => {
   it('should call to the specific rule', async () => {
     try {
-      css4wc()(KEY);
+      tailwind(defaultMapper)(KEY);
 
       expect(stub.calledOnce).to.be.true;
     } finally {
@@ -15,7 +17,7 @@ describe('css4wc', () => {
 
   it('should call to the rule with the variants specified', async () => {
     try {
-      css4wc()(KEY, ['A', 'B']);
+      tailwind(defaultMapper)(KEY, ['A', 'B']);
 
       const { A, B, C } = stub.firstCall.firstArg;
 
@@ -30,7 +32,7 @@ describe('css4wc', () => {
 
   it('should add a default mapper if not specified', async () => {
     try {
-      css4wc()(KEY);
+      tailwind(defaultMapper)(KEY);
 
       const { mapper } = stub.firstCall.firstArg;
 
@@ -43,7 +45,7 @@ describe('css4wc', () => {
 
   it('should call to the specific rule with the specified variants', async () => {
     try {
-      css4wc()(KEY, ['variant']);
+      tailwind(defaultMapper)(KEY, ['variant']);
 
       const { variant } = stub.firstCall.firstArg;
 
