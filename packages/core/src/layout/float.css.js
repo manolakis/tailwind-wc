@@ -1,5 +1,9 @@
 export default {
-  'float-left': { float: 'left' },
-  'float-right': { float: 'right' },
-  'float-none': { float: 'none' },
+  ...['left', 'right', 'none'].reduce(
+    (acc, key) => ({
+      ...acc,
+      [`float-${key}`]: { float: key },
+    }),
+    {},
+  ),
 };
