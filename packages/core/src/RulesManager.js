@@ -1,12 +1,10 @@
 import layoutResolver from './layoutResolver.js';
-import flexboxGridResolver from './flexboxGridResolver.js';
 
 export class RulesManager {
   constructor() {
     this.__ruleResolvers = new Map();
 
     this.add(layoutResolver);
-    this.add(flexboxGridResolver);
   }
 
   add(resolver) {
