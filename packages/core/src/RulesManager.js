@@ -1,4 +1,5 @@
 import layoutResolver from './layout/resolver.js';
+import sizingResolver from './sizing/resolver.js';
 import spacingResolver from './spacing/resolver.js';
 
 export class RulesManager {
@@ -6,6 +7,7 @@ export class RulesManager {
     this.__ruleResolvers = new Map();
 
     this.add(layoutResolver);
+    this.add(sizingResolver);
     this.add(spacingResolver);
   }
 
