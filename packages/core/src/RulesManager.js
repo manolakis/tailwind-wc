@@ -1,6 +1,7 @@
 import layoutResolver from './layout/resolver.js';
 import sizingResolver from './sizing/resolver.js';
 import spacingResolver from './spacing/resolver.js';
+import typographyResolver from './typography/resolver.js';
 
 export class RulesManager {
   constructor() {
@@ -9,6 +10,7 @@ export class RulesManager {
     this.add(layoutResolver);
     this.add(sizingResolver);
     this.add(spacingResolver);
+    this.add(typographyResolver);
   }
 
   add(resolver) {
