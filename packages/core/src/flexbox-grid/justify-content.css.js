@@ -4,5 +4,5 @@ export default {
   'justify-center': { 'justify-content': 'center' },
   'justify-between': { 'justify-content': 'space-between' },
   'justify-around': { 'justify-content': 'space-around' },
-  'justify-evenly': { 'justify-content': 'space-evenly' }
-}
+  'justify-evenly': { 'justify-content': 'space-evenly' },
+};

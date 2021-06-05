@@ -3,12 +3,12 @@ import flexboxGridResolver from '../../src/flexbox-grid/resolver.js';
 
 describe('flexbox and grid resolver', () => {
   [
-    'align-content', 
-    'align-items', 
-    'align-self', 
-    'col-end', 
-    'col-span', 
-    'col-start', 
+    'align-content',
+    'align-items',
+    'align-self',
+    'col-end',
+    'col-span',
+    'col-start',
     'flex-direction',
     'flex-grow',
     'flex-shrink',
@@ -30,7 +30,7 @@ describe('flexbox and grid resolver', () => {
     'row-auto',
     'row-end',
     'row-span',
-    'row-start'
+    'row-start',
   ].forEach(key => {
     it(`should have rules for ${key}`, async () => {
       const rules = flexboxGridResolver[key]();

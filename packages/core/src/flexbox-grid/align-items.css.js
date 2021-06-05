@@ -3,5 +3,5 @@ export default {
   'items-end': { 'align-items': 'flex-end' },
   'items-center': { 'align-items': 'center' },
   'items-baseline': { 'align-items': 'baseline' },
-  'items-stretch': { 'align-items': 'stretch' }
+  'items-stretch': { 'align-items': 'stretch' },
 };
