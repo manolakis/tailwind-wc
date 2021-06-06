@@ -1,4 +1,5 @@
 import layoutResolver from './layout/resolver.js';
+import flexboxGridResolver from './flexbox-grid/resolver.js';
 import sizingResolver from './sizing/resolver.js';
 import spacingResolver from './spacing/resolver.js';
 import typographyResolver from './typography/resolver.js';
@@ -8,6 +9,7 @@ export class RulesManager {
     this.__ruleResolvers = new Map();
 
     this.add(layoutResolver);
+    this.add(flexboxGridResolver);
     this.add(sizingResolver);
     this.add(spacingResolver);
     this.add(typographyResolver);
