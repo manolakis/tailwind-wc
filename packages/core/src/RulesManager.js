@@ -3,6 +3,7 @@ import flexboxGridResolver from './flexbox-grid/resolver.js';
 import sizingResolver from './sizing/resolver.js';
 import spacingResolver from './spacing/resolver.js';
 import typographyResolver from './typography/resolver.js';
+import backgroundResolver from './backgrounds/resolver.js';
 
 export class RulesManager {
   constructor() {
@@ -13,6 +14,7 @@ export class RulesManager {
     this.add(sizingResolver);
     this.add(spacingResolver);
     this.add(typographyResolver);
+    this.add(backgroundResolver);
   }
 
   add(resolver) {

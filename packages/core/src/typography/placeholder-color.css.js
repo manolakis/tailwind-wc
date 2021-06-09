@@ -1,4 +1,5 @@
 import { config } from '../config.js';
+import { hexToRgba } from '../core/utils.js';
 
 export default {
   ...[
@@ -6,11 +7,11 @@ export default {
       Object.keys(config.colors[color]).map(key => [color, key, config.colors[color][key]]),
     ),
   ].reduce(
-    (acc, [color, key, getColor]) => ({
+    (acc, [color, key, hexColor]) => ({
       ...acc,
       [`placeholder-${color}-${key}::placeholder`]: {
         '--tw-placeholder-opacity': 1,
-        color: getColor('--tw-placeholder-opacity'),
+        color: hexToRgba(hexColor, 'var(--tw-placeholder-opacity)'),
       },
     }),
     {

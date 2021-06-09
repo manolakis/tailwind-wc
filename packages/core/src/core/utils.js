@@ -53,3 +53,38 @@ export const combine = (...groups) =>
     ...result,
     ...group.flatMap(item => result.map(scope => `${item}:${scope}`)),
   ]);
+
+/**
+ * Normalize an hex color to have 6 characters instead of 3.
+ *
+ * @param {string} value - hex color to normalize
+ * @returns {string} - normalized hex color
+ */
+const normalizeHex = value => {
+  const normalizedHex = ['0x'];
+  let hex = value.substring(1).split('');
+
+  if (hex.length === 3) {
+    const [red, green, blue] = hex;
+
+    hex = [red, red, green, green, blue, blue];
+  }
+
+  return normalizedHex.concat(hex).join('');
+};
+
+/**
+ * Transforms an hex color into an object with decimal values for red, green and blue colors.
+ *
+ * @param {string} hexColor - hex color
+ * @param {string|number} alpha - alpha channel for color transparency
+ * @returns {string}
+ */
+export const hexToRgba = (hexColor, alpha = 1) => {
+  const color = normalizeHex(hexColor);
+  const red = parseInt(color.substr(1, 2), 16);
+  const green = parseInt(color.substr(3, 2), 16);
+  const blue = parseInt(color.substr(5, 2), 16);
+
+  return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+};
