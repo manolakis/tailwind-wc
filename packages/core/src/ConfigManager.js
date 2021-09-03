@@ -1,27 +1,5 @@
 import defaultColors from './colors.js';
 
-const toRGB = hexColor => ({
-  r: parseInt(hexColor.substr(1, 2), 16),
-  g: parseInt(hexColor.substr(3, 2), 16),
-  b: parseInt(hexColor.substr(5, 2), 16),
-});
-
-const transformColorsToRGBA = colors => {
-  Object.keys(colors).forEach(color => {
-    Object.keys(colors[color]).forEach(colorKey => {
-      const hexColor = colors[color][colorKey];
-      // eslint-disable-next-line no-param-reassign
-      colors[color][colorKey] = cssVariable => {
-        const { r, g, b } = toRGB(hexColor);
-
-        return `rgba(${r}, ${g}, ${b}, ${cssVariable ? `var(${cssVariable})` : 1})`;
-      };
-    });
-  });
-
-  return colors;
-};
-
 const getDefaultMediaVariants = breakpoints => ({
   'motion-reduce': '(prefers-reduced-motion: reduce)',
   'motion-safe': '(prefers-reduced-motion: no-preference)',
@@ -33,7 +11,7 @@ const getDefaultMediaVariants = breakpoints => ({
   ),
 });
 
-const DEFAULT_PALETTE = transformColorsToRGBA(defaultColors);
+const DEFAULT_PALETTE = defaultColors;
 
 const DEFAULT_BREAKPOINTS = {
   sm: 640,
@@ -84,7 +62,7 @@ export class ConfigManager {
   }
 
   set colors(colors) {
-    this._colors = transformColorsToRGBA(colors);
+    this._colors = colors;
   }
 
   get colors() {
