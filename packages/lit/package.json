@@ -1,6 +1,6 @@
 {
   "name": "@tailwind-wc/lit",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": false,
   "license": "MIT",
   "repository": {
@@ -33,7 +33,7 @@
     "lit-element"
   ],
   "dependencies": {
-    "@tailwind-wc/core": "^0.1.0",
+    "@tailwind-wc/core": "^0.2.0",
     "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {
